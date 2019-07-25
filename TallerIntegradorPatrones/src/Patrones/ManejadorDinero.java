@@ -5,7 +5,7 @@
  */
 package Patrones;
 
-public class ManejadorDinero
+public class ManejadorDinero implements Manejador
 {
     protected int monto;
     protected int denominacion;
@@ -19,12 +19,25 @@ public class ManejadorDinero
     public int getDenominacion(){ return denominacion; }
     public void setMonto(int monto){ this.monto = monto; }
 
-    public boolean retirar(int monto){
-        // Implementar
-        return false;
+    @Override
+    public Manejador getManejador(int n, double denominacion) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    public boolean depositar(int monto, int denominacion){
-        // Implementar
-        return false;
+
+    @Override
+    public void setNext(Manejador m) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public boolean retirar(int monto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean depositar(int n, double denominacion) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 }
