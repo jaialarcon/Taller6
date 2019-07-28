@@ -15,6 +15,10 @@ public class ManejadorDinero implements Manejador
         this.denominacion = denominacion; // Valor de cada billete
     }
 
+    ManejadorDinero() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getMonto(){ return monto; }
     public int getDenominacion(){ return denominacion; }
     public void setMonto(int monto){ this.monto = monto; }

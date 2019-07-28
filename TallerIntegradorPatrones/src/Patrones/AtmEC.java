@@ -19,8 +19,11 @@ public class AtmEC {
     protected ArrayList <ManejadorDinero> manejadores; // Cada manejador puede entregar dinero de una sola denominación
 
     // -----------------
-    public AtmEC() {
+    private AtmEC() {
       manejadores = new ArrayList<ManejadorDinero>();
+    }
+    public AtmEC getInstance(){
+        return instance;
     }
     // -----------------
     public double getTotal() {
@@ -37,6 +40,20 @@ public class AtmEC {
     public void ingresarDinero(double dinero, int denominacion) {
         this.dinero += dinero;
         // Todo: Sólo se puede depositar billetes de una sola denominación y agregarse al manejador correspondiente
+        ManejadorDinero manejadordin= new ManejadorDinero();
+        int cantidad=0;
+        try{
+            if(denominacion<40){
+                cantidad=(int)dinero/denominacion;
+            }else{
+                cantidad=(int)dinero/(denominacion/100);
+            }
+            manejadordin.depositar(cantidad, denominacion);
+        }catch(ArithmeticException e){
+            System.out.println(e.getMessage());
+        }
+
+        
     }
 
     public void addManejador(ManejadorDinero m){
